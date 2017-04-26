@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <title>Ric Garcia - Front End - 101</title>
+    <script src="zenscroll-min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="jquery.fancybox.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      nav {
+        text-align: center;
+        background-color: #1e1e1e;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+      }
+      nav ul {
+        margin: 0;
+        padding: 15px 50px 15px 10px;
+      }
+      nav ul a {
+        font-size: 15px;
+        font-family: sans-serif;
+        color: #999999;
+        text-decoration: none;
+        padding: 10px;
+      }
+      nav ul a:hover {
+        color: #cccccc;
+        animation: navreveal 1s 1 linear;
+      }
+      nav li {
+        display: inline-block;
+        }
+
+      section {
+        height: 600px;
+        padding: 50px 20px;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .sectiontext {
+        color: white;
+        font-size: 30px;
+      }
+      #section1 {
+        background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSJVAgohqigT6xbzJWEM8MMusQh41iw1uzLLh2M6SsCBIM_CePSyw");
+      }
+      #section2 {
+        background-image: url("https://s-media-cache-ak0.pinimg.com/736x/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
+      }
+      #section3 {
+        background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT52MVUhD7I8H918sP6wXi4mbsCcbf5KIDTdpnHxKDgMr2QasMbbQ");
+      }
+      body, .smooth-container {
+        scroll-behavior: smooth }
+      .menu-icon img {
+        width: 40px;
+        display: inline-block;
+        float: right;
+        margin: 5px;
+      }
+      .fancybox-slide--video .fancybox-content {
+        width  : 700px;
+        height : 500px;
+        max-width  : 80%;
+        max-height : 80%;
+        }
+  @media (max-width: 768px){
+      nav ul {
+        display: none;
+      }
+      nav ul li{
+        display: block;
+        }
+      }
+      @keyframes navreveal {
+        0% {margin-left: 0px;}
+        100% {margin-left: 200px;}
+      }
+
+      @keyframes testanimation {
+        0% {margin-left: 0px; margin-top: 0px; background-color: black; transform: rotate(90deg);}
+        25% {margin-left: 50px; margin-top: 50px; background-color: blue;}
+        50% {margin-left: 50px; margin-top: 150px;}
+        100% {{margin-left: 0px; margin-top: 0px; background-color: black; transform: rotate(90deg);}
+      }
+    </style>
+
+    <script>
+      $(".opennav").click(function(){
+        $("navreal").addClass("open");
+      });
+      $(".opennav").click(function(){
+        $("navreal").removeClass("transition-class");
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <nav class="nav-wrapper">
+      <div class="menu-icon">
+        <img src="img/whitehamburger.png" alt="">
+      </div>
+      <ul>
+        <li class="current"><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+      </ul>
+    </nav>
+
+  <section id="section1" class="sectiontext">
+    Section 1 - Will fill with stuff soon.
+  </section>
+
+  <section id="section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">Thumbnail Gallery</h1>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+          <a class="thumbnail" href="https://www.youtube.com/watch?v=oIIxlgcuQRU" data-fancybox="group" data-caption="Caption #1">
+            <img class="img-responsive" src="img/abstract-q-c-640-480-1.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+          <a class="thumbnail" href="img/abstract-q-c-640-480-2.jpg" data-fancybox="group" data-caption="Caption #2">
+            <img class="img-responsive" src="img/abstract-q-c-640-480-2.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
+          <a class="thumbnail" href="img/abstract-q-c-640-480-8.jpg" data-fancybox="group" data-caption="Caption #3">
+            <img class="img-responsive" src="img/abstract-q-c-640-480-8.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
+          <a class="thumbnail" href="img/abstract-q-c-640-480-5.jpg" data-fancybox="group" data-caption="Caption #4">
+            <img class="img-responsive" src="img/abstract-q-c-640-480-5.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section3">
+    Section 3
+  </section>
+
+  <script type="text/javascript">
+    $("[data-fancybox]").fancybox({
+      // Options will go here
+    });
+  </script>
+
+
+  </body>
+</html>
