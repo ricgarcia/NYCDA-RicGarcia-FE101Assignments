@@ -1,18 +1,16 @@
 <html>
   <head>
     <title>Ric Garcia - Front End - 101</title>
-    <script src="zenscroll-min.js"></script>
-    <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="style.css">
+    <script src="zenscroll-min.js"></script>
+    <!--<script src="main.js"></script>
+    -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="jquery.fancybox.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
@@ -183,9 +181,9 @@
     </header>
     <div class="menu">
       <ul>
-        <a href="#section1"><li class="current">Section 1</li></a>
-        <a href="#section2"><li class="current">Section 2</li></a>
-        <a href="#section3"><li class="current">Section 3</li></a>
+        <a href="#section1"><li>Section 1</li></a>
+        <a href="#section2"><li>Section 2</li></a>
+        <a href="#section3"><li>Section 3</li></a>
       </ul>
     </div>
   <!--
@@ -242,9 +240,8 @@
   <script type="text/javascript">
     $("[data-fancybox]").fancybox({
       // Options will go here
-
+      });
       // Hamburger JS //
-
       $( ".cross" ).hide();
       $( ".menu" ).hide();
       $( ".hamburger" ).click(function() {
@@ -258,7 +255,6 @@
       $( ".menu" ).slideToggle( "slow", function() {
       $( ".cross" ).hide();
       $( ".hamburger" ).show();
-      });
       });
       });
   </script>
