@@ -18,11 +18,16 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="nav.js"></script>
     <script src="signinsignupmodal.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+
+
   </head>
 
   <body>
     <header role="banner">
-
   		<nav class="main-nav">
   			<ul>
   				<!-- insert more links here -->
@@ -30,7 +35,6 @@
   				<li><a class="cd-signup" href="#0">Sign up</a></li>
   			</ul>
   		</nav>
-
   	</header>
 
   	<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
@@ -159,16 +163,25 @@
       <li><a href='#'>CONTACT</a></li>
       </ul>
 
-      <div id="subscribe">SUBSCRIBE TO OUR MAGAZINE</div>
+      <div id="subscribe"><a href="#"  onclick="openDialog();" >SUBSCRIBE TO OUR MAGAZINE</a></div>
       <!--
       <div id="signup_login">SIGN-UP / LOGIN </div>
     -->
-      </nav>
+
+    </nav>
 
     </header>
     <div class="placeholder">
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+       function openDialog() {
+         $("#subscribe").load('question-submit-form.php').dialog({model:true});
+       }
+    </script>
 
   </body>
 </html>
