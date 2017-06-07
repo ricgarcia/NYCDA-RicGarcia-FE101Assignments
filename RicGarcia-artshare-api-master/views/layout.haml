@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Paint Share API
+    %link{href: "/style.css", type: "text/css", rel: "stylesheet"}
+    %script{src: "/jquery.min.js"}
+    / Include EnlighterJS Styles
+    %link{href: "EnlighterJS.yui.css", rel: "stylesheet", type: "text/css"}/
+    / Include MooTools Framework
+    %script{src: "mootools-core-1.4.5-full-nocompat.js", type: "text/javascript"}
+    / Include EnlighterJS
+    %script{src: "EnlighterJS.yui.js", type: "text/javascript"}
+    / Initialize EnlighterJS
+    %meta{content: "Advanced javascript based syntax highlighting", "data-altlines" => "none", "data-compiler" => "List", "data-indent" => "4", "data-language" => "standard", "data-selector" => "pre", "data-theme" => "git", name: "EnlighterJS"}/
+  %body
+    .wrapper
+      =yield
