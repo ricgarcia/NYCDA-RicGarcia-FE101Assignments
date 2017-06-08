@@ -10,17 +10,132 @@
   	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
   	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+
 
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="subscribe_signuplogin.css">
-    <link rel="stylesheet" href="signinsignupmodal.scss">
+    <!--<link rel="stylesheet" href="signinsignupmodal.scss">-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="nav.js"></script>
-    <script src="signinsignupmodal.js"></script>
+    <!-- <script src="signinsignupmodal.js"></script>-->
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+
+    <style>
+      .modal-wrapper{
+        position: fixed;
+        top:0;
+        left:0;
+
+        background-color: rgba(155,155,155,.6);
+
+        width:100%;
+        height:100%;
+        padding: 0;
+        margin: 0;
+
+        display: none;
+      }
+      .modal {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 500px;
+        border: 2px solid grey;
+        position: absolute;
+        top: 280px;
+        left: 50%;
+      }
+
+  @media screen and (min-width: 360px) {
+    .modal {
+      position: absolute;
+      top: 280px;
+      left: 10px;
+      width: 90%;
+    }
+  }
+      .modal.show{
+        position: absolute;
+        top: 200px;
+        left: 550px;
+        height: 50px;
+        width: 500px;
+
+        padding: 30px;
+        margin: 0 auto;
+
+        background-color: white;
+        border: 2px grey;
+        border-radius: 10px;
+      }
+      .modal-on{
+        overflow: hidden;
+      }
+
+      .exit{
+        float: right;
+      }
+
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        background-color: white;
+    }
+
+      /* Set a style for all buttons */
+      button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+      }
+
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+          padding: 14px 20px;
+          background-color: #f44336;
+      }
+
+      /* Float cancel and signup buttons and add an equal width */
+      .cancelbtn,.signupbtn {
+          float: left;
+          width: 50%;
+      }
+
+      /* Add padding to container elements */
+      .container {
+          padding: 16px;
+      }
+
+      /* Clear floats */
+      .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
+
+      /* Change styles for cancel button and signup button on extra small screens */
+      @media screen and (max-width: 300px) {
+          .cancelbtn, .signupbtn {
+             width: 100%;
+          }
+    }
+    </style>
+
 
 
 
@@ -162,11 +277,41 @@
       </li>
       <li><a href='#'>CONTACT</a></li>
       </ul>
-
-      <div id="subscribe"><a href="#"  onclick="openDialog();" >SUBSCRIBE TO OUR MAGAZINE</a></div>
       <!--
-      <div id="signup_login">SIGN-UP / LOGIN </div>
-    -->
+      <div id="subscribe"><a href="#"  onclick="openDialog();" >SUBSCRIBE TO OUR MAGAZINE</a></div>
+      -->
+      <button id="subscribe" class="subscribe-btn">SUBSCRIBE TO OUR MAGAZINE</button>
+      <div class="modal-wrapper">
+        <div class="modal">
+          <form action="/action_page.php" style="border:1px solid #ccc;background-color: white;">
+            <div class="container">
+              <a href="#" class="exit">X</a>
+              <h1>SUBSCRIBE</h1>
+              <label><b>Full Name</b></label>
+              <input type="text" placeholder="Enter Full Name" name="Full Name" required>
+
+
+              <label><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+
+              <label><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <label><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+              <input type="checkbox" checked="checked"> Remember me
+              <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+              <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+              </div>
+            </div>
+</form>
+
+        </div>
+      </div>
+
 
     </nav>
 
@@ -174,14 +319,50 @@
     <div class="placeholder">
     </div>
 
+    <!-- News
+        <div>News Article 1
+        </div>
+    News  -->
+
+
+<!-- Gallery Photos
+    <div>Gallery
+    </div>
+Gallery  -->
+
+
+<!-- Gallery Videos
+    <div>Gallery
+    </div>
+Gallery  -->
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
+    <!--
     <script type="text/javascript">
        function openDialog() {
          $("#subscribe").load('question-submit-form.php').dialog({model:true});
        }
     </script>
+  -->
+
+  <script>
+    $(document).ready(function(){
+      $(".subscribe-btn").click(function(e){
+        e.preventDefault()
+        $(".modal-wrapper").show()
+        $("body").addClass("modal-on")
+      })
+      $(".exit").click(function(e){
+        e.preventDefault()
+    //basically the opposite of activate
+        $(".modal-wrapper").hide()
+        $("body").removeClass("modal-on")
+      })
+    })
+  </script>
 
   </body>
 </html>

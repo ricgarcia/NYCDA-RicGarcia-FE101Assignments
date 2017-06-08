@@ -90,10 +90,13 @@ header[role=banner]::after {
 .main-nav {
   float: right;
   margin-right: 5%;
-  width: 44px;
+  width: 100px;
   height: 100%;
   background: url("../img/cd-icon-menu.svg") no-repeat center center;
   cursor: pointer;
+  text-align: center;
+  padding-right: 15px;
+  z-index: 99999999999999;
 }
 .main-nav ul {
   position: absolute;
@@ -104,7 +107,7 @@ header[role=banner]::after {
   -moz-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   -o-transform: translateY(-100%);
-  transform: translateY(-100%);
+  transform: translateY(-150%);
 }
 .main-nav ul.is-visible {
   -webkit-transform: translateY(50px);
@@ -118,9 +121,10 @@ header[role=banner]::after {
   height: 50px;
   line-height: 50px;
   padding-left: 5%;
-  background: #292a34;
+  background: #515151;
   border-top: 1px solid #3b3d4b;
   color: #FFF;
+  z-index: ;
 }
 @media only screen and (min-width: 768px) {
   .main-nav {
@@ -163,6 +167,7 @@ header[role=banner]::after {
     padding: .6em 1em;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50em;
+    width: 200px;
   }
   .main-nav a.cd-signup {
     background: #ef0013;

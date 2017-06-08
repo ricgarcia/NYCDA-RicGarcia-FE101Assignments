@@ -11,6 +11,7 @@
     position:sticky;
     width: 100%;
     top: 63px;
+    border: none:
   }
   #subscribe a {
     color:  #000;
@@ -52,6 +53,7 @@
     top: 0px;
     left: 750px;
     width: 210px;
+    border: none;
   }
 
   #signup_login {
@@ -70,7 +72,7 @@
   }
   .placeholder {
     background-image: url('img/news_placeholder.png');
-    height: 1000px;
-    width: 2100px;
+    height: 1375px;
+    width: 1300px;
   }
 }
