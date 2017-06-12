@@ -167,7 +167,7 @@
   header{display:inline-block; font-size:12px;}
 
   footer{
-      height: 205px;
+      height: 225px;
       background-color: #ffd200;
   }
   footer ul {
@@ -224,13 +224,15 @@
     height: 550px;
   }
   footer{
-    height: 105px;
+    height: 155px;
     background-color: #ffd200;
   }
   footer ul {
+    display: inline-block;
+    list-style-type: none;
     width: 90%;
     padding-top: 10px;
-    padding-left: 175px;
+    padding-left: 225px;
   }
   footer ul li{
     display: inline-block;
@@ -273,5 +275,13 @@
   }
   #News p {
     font-size: 20px;
+  }
+  footer {
+    height: 150px;
+  }
+  footer ul {
+    width: 90%;
+    padding-top: 10px;
+    padding-left: 345px;
   }
 }
