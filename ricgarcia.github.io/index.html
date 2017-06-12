@@ -1,305 +1,235 @@
 <html>
   <head>
     <title>Ric Garcia - Front End - 101</title>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="animate.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="zenscroll-min.js"></script>
-    <!--<script src="main.js"></script>
-    -->
+
+    <link rel="stylesheet" href="css/style.css">
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zenscroll/4.0.0/zenscroll-min.js"></script>
+
+    <script src="js/main.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
+    <script src="js/jquery.fancybox.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-    body{
-      font-family: 'Noto Sans', sans-serif;
-      margin:0;
-      width:100%;
-      height:100vh;
-        background:#ffffff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      }
-      header{
-      width:100%;
-      background:#ffffff;
-      height:60px;
-      line-height:60px;
-      border-bottom:1px solid #dddddd;
-      }
-      .hamburger{
-      background:none;
-      position:absolute;
-      top:0;
-      right:0;
-      line-height:45px;
-      padding:5px 15px 0px 15px;
-      color:#999;
-      border:0;
-      font-size:1.4em;
-      font-weight:bold;
-      cursor:pointer;
-      outline:none;
-      z-index:10000000000000;
-      }
-      .cross{
-      background:none;
-      position:absolute;
-      top:0px;
-      right:0;
-      padding: 15px 15px 0px 15px;
-      color:#999;
-      border:0;
-      font-size:3em;
-      line-height:65px;
-      font-weight:bold;
-      cursor:pointer;
-      outline:none;
-      z-index:10000000000000;
-      }
-      .menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#f1f1f1;  position:absolute; text-align:center; font-size:12px;}
-      .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
-      .menu li {display: block;   padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
-      .menu li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
-      .menu ul li a { text-decoration:none;  margin: 0px; color:#666;}
-      .menu ul li a:hover {  color: #666; text-decoration:none;}
-      .menu a{text-decoration:none; color:#666;}
-      .menu a:hover{text-decoration:none; color:#666;}
-
-      .glyphicon-home{
-      color:white;
-      font-size:1.5em;
-      margin-top:5px;
-      margin:0 auto;
-      }
-      header{display:inline-block; font-size:12px;}
-      span{padding-left:20px;}
-      a{color:#336699;}
-
-      nav {
-        text-align: center;
-        background-color: #1e1e1e;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-      }
-      nav ul {
-        margin: 0;
-        padding: 15px 50px 15px 10px;
-      }
-      nav ul a {
-        font-size: 15px;
-        font-family: sans-serif;
-        color: #999999;
-        text-decoration: none;
-        padding: 10px;
-      }
-      nav ul a:hover {
-        color: #cccccc;
-        animation: navreveal 1s 1 linear;
-      }
-      nav li {
-        display: inline-block;
-        }
-
-      section {
-        height: 600px;
-        padding: 50px 20px;
-        background-size: cover;
-        background-attachment: fixed;
-      }
-      .sectiontext {
-        display: inline-block;
-        float: left;
-        margin-left: 380px;
-        color: grey;
-        font-size: 30px;
-      }
-      .sectiontext:hover {
-        display: inline-block;
-        float: left;
-        color: grey;
-        font-size: 30px;
-        animation: shake 1s 1 linear;
-      }
-      #section1 {
-        margin-top: 100px;
-        background-color: #edeeef;
-        /*background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSJVAgohqigT6xbzJWEM8MMusQh41iw1uzLLh2M6SsCBIM_CePSyw");*/
-      }
-      .section1Art {
-        display: inline-block;
-        float: left;
-        margin-left: 200px;
-        margin-right: 300px;
-        width: 50%;
-        animation: slideInLeft 1s 1 linear;
-      }
-      .section1Art:hover {
-        display: inline-block;
-        float: left;
-        margin-left: 200px;
-        margin-right: 300px;
-        width: 50%;
-        animation: flipOutX 1s 1 linear;
-      }
-      #section2 {
-        /*background-image: url("https://s-media-cache-ak0.pinimg.com/736x/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");*/
-        background-color: white;
-        height: 100%;
-        margin-bottom: 50px;
-      }
-      #section3 {
-        background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT52MVUhD7I8H918sP6wXi4mbsCcbf5KIDTdpnHxKDgMr2QasMbbQ");
-      }
-/****
-      body, .smooth-container {
-        scroll-behavior: smooth }
-      .menu-icon img {
-        width: 40px;
-        display: inline-block;
-        float: right;
-        margin: 5px;
-      }
-**/
-      .fancybox-slide--video .fancybox-content {
-        width  : 700px;
-        height : 500px;
-        max-width  : 80%;
-        max-height : 80%;
-        }
-  @media (max-width: 768px){
-      nav ul {
-        display: none;
-      }
-      nav ul li{
-        display: block;
-        }
-      }
-      @keyframes navreveal {
-        0% {margin-left: 0px;}
-        100% {margin-left: 200px;}
-      }
-
-      @keyframes testanimation {
-        0% {margin-left: 0px; margin-top: 0px; background-color: black; transform: rotate(90deg);}
-        25% {margin-left: 50px; margin-top: 50px; background-color: blue;}
-        50% {margin-left: 50px; margin-top: 150px;}
-        100% {{margin-left: 0px; margin-top: 0px; background-color: black; transform: rotate(90deg);}
-      }
-    </style>
-
-  <!--  <script>
-      $(".opennav").click(function(){
-        $("navreal").addClass("open");
-      });
-      $(".opennav").click(function(){
-        $("navreal").removeClass("transition-class");
-      });
-    </script>
-  -->
   </head>
 
   <body>
-    <header>
-      <button class="hamburger">&#9776;</button>
-      <button class="cross">&#735;</button>
-    </header>
-    <div class="menu">
-      <ul>
-        <a href="#section1"><li>Section 1</li></a>
-        <a href="#section2"><li>Section 2</li></a>
-        <a href="#section3"><li>Section 3</li></a>
-      </ul>
+
+    <div>
+      <header>
+        <div id="logo"><a href="index.html"><img src='img/zoomzoomlogo.png'></a><div>
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+        <!--<div id="hamburger-cross-background"></div>-->
+      </header>
     </div>
-  <!--
-    <nav class="nav-wrapper">
-      <div class="menu-icon">
-        <img src="img/whitehamburger.png" alt="">
+
+    <nav>
+      <div class="menu">
+        <ul>
+          <a href="index.html"><li>HOME</li></a>
+          <a href="#News"><li>NEWS</li></a>
+          <a href="#Gallery"><li>GALLERY</li></a>
+          <a href="#Videos"><li>VIDEOS</li></a>
+          <a href="#Videos">
+            <li>
+          <!-- Trigger/Open The Modal -->
+            <button id="myBtn">SUBSCRIBE</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&#735;</span>
+                <h1>SUBCRIBE</h1>
+                <form>
+                Email:<br>
+                <input type="text" name="firstname" placeholder="blank@gmail.com" value="" id="inputbox">
+                <br>
+                Password:<br>
+                <input type="text" name="lastname" placeholder="password" value="" id="inputbox">
+                <br><br>
+                <input type="submit" value="Submit" id="submit">
+                </form>
+              </div>
+            </li>
+          </a>
+
+            </div>
+        </ul>
       </div>
-      <ul>
-        <li class="current"><a href="#section1">Section 1</a></li>
-        <li><a href="#section2">Section 2</a></li>
-        <li><a href="#section3">Section 3</a></li>
-      </ul>
     </nav>
-  -->
 
-  <section id="section1">
-    <img src="img/abstract-q-c-640-480-5.jpg" class="section1Art">
-    <p class="sectiontext">Abstract Art</p>
-  </section>
-<!---->
-  <section id="section2">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="page-header">Gallery</h1>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
-          <a class="thumbnail" href="https://www.youtube.com/watch?v=oIIxlgcuQRU" data-fancybox="group" data-caption="Caption #1">
-            <img class="img-responsive" src="img/abstract-q-c-640-480-1.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
-          <a class="thumbnail" href="img/abstract-q-c-640-480-2.jpg" data-fancybox="group" data-caption="Caption #2">
-            <img class="img-responsive" src="img/abstract-q-c-640-480-2.jpg" alt="">
+
+
+    <div>
+      <div id="aspot-slides" class="center">
+        <a href="#TrackBeast"><img class="mySlides" src="img/aspot-1.jpg" style="width:100%"></a>
+        <a href="#25MileKiller"><img class="mySlides" src="img/aspot-2.jpg" style="width:100%"></a>
+        <a href="#DriftGod"><img class="mySlides" src="img/aspot-3.jpg" style="width:100%"></a>
+      </div>
+    </div>
+
+    <div id="News" class="center">
+      <h1>ZZ News</h1>
+      <nav id="NewsNav" class="center">
+        <ul class="center">
+          <a href="#TrackBeast"><li>Track Beast</li></a>
+          <a href="#25MileKiller"><li>.25 Mile Killer</li></a>
+          <a href="#DriftGod"><li>Drift God</li></a>
+        </ul>
+      </nav>
+      <div class="Article">
+        <h2>Track Beast</h2>
+        <p id="TrackBeast"><img src="img/article-trackbeast.jpg">Bacon ipsum dolor amet kevin venison meatball turducken doner ball tip kielbasa shankle. Biltong doner short ribs pig.Chicken pastrami kevin picanha doner corned beef boudin sausage porchetta prosciutto turducken brisket. Swine pork chop pig chicken. Ground round bresaola sausage beef short ribs.
+
+        Beef cupim andouille drumstick tail prosciutto, beef ribs brisket landjaeger ribeye. Jerky beef shank pork loin, beef ribs capicola doner landjaeger pig. Pancetta andouille pork loin jowl, brisket flank tongue short ribs turkey drumstick venison tail kevin jerky. Doner meatloaf meatball pastrami turkey, tri-tip pork chop short loin. Ham hock cupim beef shoulder ham.
+
+
+        Chicken turkey venison, jowl landjaeger ribeye pig. T-bone alcatra pork short ribs, brisket swine bacon burgdoggen pork loin picanha fatback pig turducken strip steak. Sirloin venison drumstick pork belly andouille ham spare ribs cupim hamburger pancetta short loin meatball pastrami beef shankle. Meatloaf tri-tip corned beef venison, tail filet mignon chicken pancetta alcatra. Filet mignon beef ribs meatloaf cow prosciutto chuck shank bresaola shoulder kevin. Pork chop andouille tail cupim bresaola landjaeger drumstick pig tongue.
+        </p>
+      </div>
+      <div class="Article">
+        <h2>.25 Mile Killer</h2>
+        <p id="25MileKiller"><img src="img/article-25milekiller.jpg">Bacon ipsum dolor amet kevin venison meatball turducken doner ball tip kielbasa shankle. Biltong doner short ribs pig.Chicken pastrami kevin picanha doner corned beef boudin sausage porchetta prosciutto turducken brisket. Swine pork chop pig chicken. Ground round bresaola sausage beef short ribs.
+
+        Beef cupim andouille drumstick tail prosciutto, beef ribs brisket landjaeger ribeye. Jerky beef shank pork loin, beef ribs capicola doner landjaeger pig. Pancetta andouille pork loin jowl, brisket flank tongue short ribs turkey drumstick venison tail kevin jerky. Doner meatloaf meatball pastrami turkey, tri-tip pork chop short loin. Ham hock cupim beef shoulder ham.
+
+
+        Chicken turkey venison, jowl landjaeger ribeye pig. T-bone alcatra pork short ribs, brisket swine bacon burgdoggen pork loin picanha fatback pig turducken strip steak. Sirloin venison drumstick pork belly andouille ham spare ribs cupim hamburger pancetta short loin meatball pastrami beef shankle. Meatloaf tri-tip corned beef venison, tail filet mignon chicken pancetta alcatra. Filet mignon beef ribs meatloaf cow prosciutto chuck shank bresaola shoulder kevin. Pork chop andouille tail cupim bresaola landjaeger drumstick pig tongue.
+        </p>
+      </div>
+      <div class="Article">
+        <h2>Drift God</h2>
+        <p id="DriftGod"><img src="img/article-driftgod.jpg">Bacon ipsum dolor amet kevin venison meatball turducken doner ball tip kielbasa shankle. Biltong doner short ribs pig.Chicken pastrami kevin picanha doner corned beef boudin sausage porchetta prosciutto turducken brisket. Swine pork chop pig chicken. Ground round bresaola sausage beef short ribs.
+
+        Beef cupim andouille drumstick tail prosciutto, beef ribs brisket landjaeger ribeye. Jerky beef shank pork loin, beef ribs capicola doner landjaeger pig. Pancetta andouille pork loin jowl, brisket flank tongue short ribs turkey drumstick venison tail kevin jerky. Doner meatloaf meatball pastrami turkey, tri-tip pork chop short loin. Ham hock cupim beef shoulder ham.
+
+
+        Chicken turkey venison, jowl landjaeger ribeye pig. T-bone alcatra pork short ribs, brisket swine bacon burgdoggen pork loin picanha fatback pig turducken strip steak. Sirloin venison drumstick pork belly andouille ham spare ribs cupim hamburger pancetta short loin meatball pastrami beef shankle. Meatloaf tri-tip corned beef venison, tail filet mignon chicken pancetta alcatra. Filet mignon beef ribs meatloaf cow prosciutto chuck shank bresaola shoulder kevin. Pork chop andouille tail cupim bresaola landjaeger drumstick pig tongue.
+        </p>
+      </div>
+    </div>
+
+    <div id="Gallery">
+      <h1>ZZ Gallery</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+            <a class="thumbnail" href="img/aspot-1.jpg" data-fancybox="group" data-caption="Porsche GT3 RS">
+              <img class="img-responsive" src="img/aspot-1.jpg" alt="">
             </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
-          <a class="thumbnail" href="img/abstract-q-c-640-480-8.jpg" data-fancybox="group" data-caption="Caption #3">
-            <img class="img-responsive" src="img/abstract-q-c-640-480-8.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
-          <a class="thumbnail" href="img/abstract-q-c-640-480-5.jpg" data-fancybox="group" data-caption="Caption #4">
-            <img class="img-responsive" src="img/abstract-q-c-640-480-5.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
-          <a class="thumbnail" href="img/abstract-q-c-640-480-5.jpg" data-fancybox="group" data-caption="Caption #4">
-            <img class="img-responsive" src="img/abstract-q-c-640-480-5.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-12 thumb">
-          <a class="thumbnail" href="img/abstract-q-c-640-480-5.jpg" data-fancybox="group" data-caption="Caption #4">
-            <img class="img-responsive" src="img/abstract-q-c-640-480-5.jpg" alt="">
-          </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+            <a class="thumbnail" href="img/aspot-2.jpg" data-fancybox="group" data-caption="Chevy Bel Air Dragster">
+              <img class="img-responsive" src="img/aspot-2.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+            <a class="thumbnail" href="img/aspot-3.jpg" data-fancybox="group" data-caption="BMW E30 Drift Racecar">
+              <img class="img-responsive" src="img/aspot-3.jpg" alt="">
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="section3">
-    Section 3
-  </section>
+    <div id="Videos">
+      <h1>Videos</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+            <a class="thumbnail" href="https://www.youtube.com/watch?v=lW1tQOnZ5ks" data-fancybox="group" data-caption="BMW E30 V8 Drift Car">
+              <img class="img-responsive" src="img/video-1.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+            <a class="thumbnail" href="https://www.youtube.com/watch?v=XGZ1TW9nLdk" data-fancybox="group" data-caption="2015 Porsche 911 GT3 RS - First Track Test">
+              <img class="img-responsive" src="img/video-2.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+            <a class="thumbnail" href="https://www.youtube.com/watch?v=3tMoHmYt7us" data-fancybox="group" data-caption="1957 Chevy Bel Air &#34;Rital Express&#34; Drag Car Super Pro ET - Hills Race Rivanazzano">
+              <img class="img-responsive" src="img/video-3.jpg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script type="text/javascript">
-    $("[data-fancybox]").fancybox({
-      // Options will go here
-      });
-      // Hamburger JS //
-      $( ".cross" ).hide();
-      $( ".menu" ).hide();
-      $( ".hamburger" ).click(function() {
-      $( ".menu" ).slideToggle( "slow", function() {
-      $( ".hamburger" ).hide();
-      $( ".cross" ).show();
-      });
-      });
 
-      $( ".cross" ).click(function() {
-      $( ".menu" ).slideToggle( "slow", function() {
-      $( ".cross" ).hide();
-      $( ".hamburger" ).show();
-      });
-      });
-  </script>
 
-  </body>
+    <footer class="footer">
+      <div>
+        <ul>
+          <a href="index.html"><li>HOME </li></a>
+          <a href="#News"><li>NEWS</li></a>
+          <a href="#Gallery"><li>GALLERY</li></a>
+          <a href="#Videos"><li>VIDEOS</li></a>
+        </ul>
+        <p><br>&copy; 2017 ZoomZoom Magazine LLC.</p>
+      </div>
+    </footer>
+
+    <script>
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {slideIndex = 1}
+        x[slideIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+
+            // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	  <script src="jquery.fancybox.min.js"></script>
+
+
+
+ </body>
 </html>
