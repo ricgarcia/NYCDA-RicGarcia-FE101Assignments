@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Paintings</title>
+    <script src ="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function(){ //allows page to load before running any JS
+          $('#submit').click(function(e){
+            e.preventDefault();//Prevents page reload
+            console.log("start");//
+            $.ajax({
+              type:'post',//Ajax call to add new user
+              url:"http://art-share.herokuapp.com/api/v1/users/",
+              data:{//inserts the information from the html form below onto the server
+                user:{
+                  fname:$('#first').val(),
+                  lname:$('#last').val(),
+                  password:$('#pass').val(),
+                  email:$('#email').val()
+
+                }
+              }
+            }).then(function(response){//then fuction checks the response submitted
+              console.log(response);
+            })
+            $.ajax({
+              url:"http://art-share.herokuapp.com/api/v1/users/533/paintings/",
+              type:'get'// ajax call that retrieves data from the server
+            }).then(function(response){
+               var paintings=response.result;// extracts the key results inside of the array.
+               for (var i = 0; i < paintings.length; i++){
+               var painting = paintings[i];
+               $('#painting-out').append($("<li> <img src='" + painting.image_url + "'></li>"))
+             };//appends img url so that that the right imag URL outputs into the div below.
+             console.log(paintings);
+            })
+          })
+        })
+    </script>
+  </head>
+  <body>
+      <form> <!--form captures Informtion below-->
+        <label for ='first'>First Name</label>
+        <input type='text' id='first' name='fname'></input>
+        <label for ='last'>Last Name</label>
+        <input type='text' id='last' name='lname'></input>
+        <label for ='email'>Email</label>
+        <input type='text' id='email' name='email'></input>
+        <label for='password'>Password</label>
+        <input type='password' id='pass' name='password'></input>
+        <input type='hidden'id='userID'name='user'></input>
+        <input type='submit' id ='submit' value='create'/>
+      </form>
+
+      <div id=list>
+          <br>
+          <span id="painting-out">See Below</span> <!--output of appended img url pulled from API-->
+      </div>
+  </body>
+</html>

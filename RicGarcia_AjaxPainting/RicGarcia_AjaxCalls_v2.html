@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ric Garcia Ajax Calls</title>
+    <script src ="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('#submit').click(function(e){
+            e.preventDefault();
+            console.log("start");
+            $.ajax({
+              type:'post',
+              url:"http://art-share.herokuapp.com/api/v1/users/",
+              data:{
+                user:{
+                  fname:$('#first').val(),
+                  lname:$('#last').val(),
+                  password:$('#pass').val(),
+                  email:$('#email').val()
+                }
+              }
+            }).then(function(response){
+              console.log(response);
+            })
+            $.ajax({
+              url:"http://art-share.herokuapp.com/api/v1/users/533/paintings/",
+              type:'get'
+            }).then(function(response){
+               var paintings=response.result;
+               for (var i = 0; i < paintings.length; i++){
+               var painting = paintings[i];
+               $('#painting-selection').append($("<li> <img src='" + painting.image_url + "'></li>"))
+             };
+             console.log(paintings);
+            })
+          })
+        })
+    </script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        color: limegreen;
+      }
+      h1 {
+        border: 1px solid gray;
+        text-align: center;
+        width: 66%;
+      }
+      #userform {
+        width: 60%;
+        height: 300px;
+        background-color: gray;
+        padding: 30px;
+      }
+      div.center {
+        margin: 0 auto;
+      }
+      .inputstyle {
+        background-color: limegreen;
+        margin-right: 50px;
+        margin-bottom: 15px;
+        width: 70%;
+        border: none;
+        height: 30px;
+        padding-bottom: 10px;
+        font-size: 15px;
+      }
+      #paintout {
+        border: 1px solid black;
+        width: 50%;
+      }
+      label {
+        color: white;
+        padding-right: 15px;
+        text-align: center;
+      }
+      #email {
+        margin-left: 38px;
+      }
+      #pass {
+        margin-left: 7px;
+      }
+      #submit {
+        position: fixed;
+        top: 350px;
+        left: 250px;
+        background-color: lightgray;
+        border: 2px solid limegreen;
+        width: 200px;
+        height: 30px;
+        font-size: 15px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <h1>Create Account</h1>
+    <div id="userform">
+      <form>
+        <label for ='first'>First Name</label>
+        <input type='text' id='first' class='inputstyle' name='fname'></input>
+        <label for ='last'>Last Name</label>
+        <input type='text' id='last' class='inputstyle' name='lname'></input>
+        <label for ='email'>Email</label>
+        <input type='text' id='email' class='inputstyle' name='email'></input>
+        <label for='password'>Password</label>
+        <input type='password' id='pass' class='inputstyle' name='password'></input>
+        <input type='hidden'id='userID' class='inputstyle'name='user'></input>
+        <input type='submit' id ='submit' value='SUBMIT'></input>
+      </form>
+    </div>
+
+    <div id=list>
+      <br>
+        <span id="painting-selection">User Painting Below: </span>
+    </div>
+  </body>
+
+</html>
